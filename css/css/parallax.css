@@ -1,0 +1,34 @@
+body{
+	margin: 0;
+	padding: 0;
+	font-family: Arial;
+	box-sizing: border-box;
+}
+.parallax{
+	background: url('../img/ekaterinburg_3.jpg');
+	background-attachment: fixed;
+	height: 55vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+.parallax .mask{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.7);
+	z-index: 2;
+}
+.parallax-content{
+	z-index: 3;
+}
+.parallax h1{
+	color: white;
+	font-size: 70px;
+}
+.page-content{
+	font-size: 18px;
+}

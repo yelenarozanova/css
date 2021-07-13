@@ -1,0 +1,38 @@
+body{
+	background-color: rgb(41, 40, 40);
+}
+.content{
+	width: 1000px;
+	height: 400px;
+	padding: 50px;
+}
+.content__circle{
+	position: relative;
+	background-color: white;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	animation: white-circle 2s linear infinite alternate 0s forwards, circle-height 3s linear infinite alternate 0s forwards;
+}
+@keyframes white-circle{
+	0%{
+		left: 0;
+	}
+	50%{
+		border-radius: 0%;
+	}
+	100%{
+		left: 600px;
+	}
+}
+@keyframes circle-height{
+	0%{
+		top: 0;
+	}
+	20%{
+		top: 300px;
+	}
+	100%{
+		top: 0;
+	}
+}

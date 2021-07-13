@@ -1,0 +1,11 @@
+body{
+	margin: 0;
+	padding: 0;
+	font-family: Arial;
+	box-sizing: border-box;
+}
+.parallax{
+	background: url('../img/ekaterinburg_3.jpg');
+	background-attachment: fixed;
+	height: 500px;
+}

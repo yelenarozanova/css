@@ -1,0 +1,749 @@
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <title>Quiz Spain</title>
+        <script type="text/javascript">
+        const array = [
+        {
+            intro: '<img src="images/01.jpg">',
+            pregunta: '¿Qué ruta de peregrinación simbolizan estas conchas?',
+            img: '01.jpg',
+            pista1: '_a__n_ __ s______o',
+            pista2: '_a__no d_ s__ti__o',
+            pista3: 'ca__no d_ sa_ti_go',
+            solucion: 'camino de santiago',
+            extraInfo: '',
+            extraInfoImg: '<img src="images/41.jpg">',
+        },
+        {
+            intro: '<img src="images/05.jpg">',
+            pregunta: '¿Cómo se llama este plato en España?',
+            img: '05.jpg',
+            pista1: 'e_s_____ r___',
+            pista2: 'e_sa__d_ r__a',
+            pista3: 'e_sal_da r_sa',
+            solucion: 'ensalada rusa',
+            extraInfo: 'O ensaladilla rusa',
+            extraInfoImg: '',
+        },
+        {
+            intro: '',
+            pregunta: 'La comunidad autónoma más pequeña de España:',
+            img: '',
+            pista1: '__l__ _a_e_r__',
+            pista2: '__las _ale_r_s',
+            pista3: '_slas _ale_res',
+            solucion: 'islas baleares',
+            extraInfo: '',
+            extraInfoImg: '<img src="images/42.jpg">',
+        },
+        {
+            intro: '<img src="images/04.jpg">',
+            pregunta: '¿Cómo se llama este plato?',
+            img: '04.jpg',
+            pista1: '_a_a___ _r_v__',
+            pista2: '_ata___ _r_v_s',
+            pista3: '_atat__ br_vas',
+            solucion: 'patatas bravas',
+            extraInfo: '',
+            extraInfoImg: '',
+        },
+        {
+            intro: '',
+            pregunta: 'El champán catalán se llama...',
+            img: '',
+            pista1: 'c___',
+            pista2: 'c__a',
+            pista3: 'c_va',
+            solucion: 'cava',
+            extraInfo: '',
+            extraInfoImg: '',
+        },
+        {
+            intro: '',
+            pregunta: '¿Quiénes les traen regalos a los niños españoles?',
+            img: '',
+            pista1: '__y_s m____',
+            pista2: '_ey_s m__os',
+            pista3: '_eyes m_gos',
+            solucion: 'reyes magos',
+            extraInfo: '',
+            extraInfoImg: '<img src="images/07.jpg">',
+        },
+        {
+            intro: '',
+            pregunta: 'El nombre masculino más común en España:',
+            img: '',
+            pista1: 'a__o__o',
+            pista2: 'a_to__o',
+            pista3: 'a_to_io',
+            solucion: 'antonio',
+            extraInfo: '',
+            extraInfoImg: '',
+        },
+        {
+            intro: '<img src="images/03.jpg">',
+            pregunta: 'Dulce navideño con base de almendra, miel y azúcar:',
+            img: '03.jpg',
+            pista1: 't__r__',
+            pista2: 't__r_n',
+            pista3: 't_rrón',
+            solucion: 'turrón',
+            solucion2: 'turron',
+            extraInfo: '',
+            extraInfoImg: '',
+        },
+        {
+            intro: '<i>Antonio Banderas, Los Lobos.</i> Continúa la letra:',
+            pregunta: 'Me gusta tocar guitarra<br>Me gusta cantar el son<br>Mariachi me acompaña <br>...',
+            img: '',
+            pista1: 'cu____ ___to _i _____ón',
+            pista2: 'cu___o c__to _i _an__ón',
+            pista3: 'cua_do ca_to mi _anc_ón',
+            solucion: 'cuando canto mi canción',
+            solucion2: 'cuando canto mi cancion',
+            extraInfo: 'Puedes escuchar la canción aquí (0:38):<br><br><audio controls> <source src="images/cancion_del_mariachi.mp3"></audio>',
+            extraInfoImg: '',
+        },
+        {
+            intro: '',
+            pregunta: '¿Qué es el Teide?',
+            img: '',
+            pista1: '_ol___',
+            pista2: '_ol_án',
+            pista3: '_olcán',
+            solucion: 'volcán',
+            solucion2: 'volcan',
+            extraInfo: 'Está en Tenerife (islas canarias).',
+            extraInfoImg: '<img src="images/06.jpg">',
+        },
+        {
+            intro: '',
+            pregunta: 'El nombre femenino más común en España:',
+            img: '',
+            pista1: 'm____ _a___n',
+            pista2: 'm___a _ar_en',
+            pista3: 'm_r_a car_en',
+            solucion: 'maría carmen',
+            solucion2: 'maria carmen',
+            extraInfo: '',
+            extraInfoImg: '',
+        },
+        {
+            intro: '',
+            pregunta: '¿Qué fiesta se celebra el 2 de mayo?',
+            img: '',
+            pista1: 'd__ _e __ m____',
+            pista2: 'd_a _e l_ m_d__',
+            pista3: 'd_a _e la m_dre',
+            solucion: 'día de la madre',
+            solucion2: 'dia de la madre',
+            extraInfo: '',
+            extraInfoImg: '',
+        },
+        {
+            intro: '',
+            pregunta: 'El día del padre es el 17 de marzo, que es el día de...',
+            img: '',
+            pista1: 's__ __s_',
+            pista2: 's__ _os_',
+            pista3: 'sa_ _osé',
+            solucion: 'san josé',
+            solucion2: 'san jose',
+            extraInfo: 'San José es el padre de Jesús',
+            extraInfoImg: '',
+        },
+        {
+            intro: '<img src="images/02.jpg">',
+            pregunta: '¿En qué plaza de Madrid está esta estatua?',
+            img: '02.jpg',
+            pista1: '_ue___ __l _o_',
+            pista2: '_uer__ _el _o_',
+            pista3: '_uert_ del so_',
+            solucion: 'puerta del sol',
+            extraInfo: '',
+            extraInfoImg: '',
+        },
+        {
+            intro: '',
+            pregunta: '¿Qué otra curiosidad está en la Puerta del Sol?',
+            img: '',
+            pista1: '_i_ó___r_ c___',
+            pista2: '_i_óm__ro c__o',
+            pista3: 'ki_óme_ro c_ro',
+            solucion: 'kilómetro cero',
+            solucion2: 'kilometro cero',
+            extraInfo: '',
+            extraInfoImg: '<img src="images/08.jpg">',
+        },
+        {
+            intro: '',
+            pregunta: '¿Cómo se llama el rey actual de España?',
+            img: '',
+            pista1: '_el___',
+            pista2: '_el_p_',
+            pista3: 'fel_pe',
+            solucion: 'felipe',
+            extraInfo: 'Se llama Felipe VI',
+            extraInfoImg: '<img src="images/09.jpg">',
+        },
+        {
+            intro: '',
+            pregunta: '¿Cómo se llama el premio principal de la lotería de Navidad?',
+            img: '',
+            pista1: '__r__',
+            pista2: '__rdo',
+            pista3: 'g_rdo',
+            solucion: 'gordo',
+            extraInfo: '',
+            extraInfoImg: '',
+        },
+        {
+            intro: '',
+            pregunta: 'Cada verano en Buñol (Comunidad Valenciana) se organiza batalla de...',
+            img: '',
+            pista1: '__m__es',
+            pista2: '_oma_es',
+            pista3: '_omates',
+            solucion: 'tomates',
+            extraInfo: 'Por eso el festival se llama La Tomatina.',
+            extraInfoImg: '<img src="images/39.jpg">',
+        },
+        {
+            intro: '',
+            pregunta: 'Los últimos siete días antes de la Pascua se llaman...',
+            img: '',
+            pista1: 's__an_ _an__',
+            pista2: 's__ana _ant_',
+            pista3: 'se_ana _anta',
+            solucion: 'semana santa',
+            extraInfo: '',
+            extraInfoImg: '<img src="images/44.jpg">',
+        },
+        {
+            intro: '<img src="images/43.jpg">',
+            pregunta: 'Pablo Picasso es el creador del movimiento artístico que se llama...',
+            img: '',
+            pista1: '_u___mo',
+            pista2: '_ub__mo',
+            pista3: '_ubismo',
+            solucion: 'cubismo',
+            extraInfo: 'Ha creado este corriente junto con el pintor francés Georges Braque.',
+            extraInfoImg: '<img src="images/40.jpg"><br><i style="font-size:11pt">Guernica, 1937</i>',
+        },
+    ];
+        
+    let score = 0;
+        
+        let myBody, total, questionNumber, intro, question, pista, myField, submit, nextPrompt, nextPrompt2, nextQuestion, meRindo, scoreLine, canGet, myScore, points, yourScore, wrap1, wrap2, wrap3, wrap4, wrap5, wrap6, wrap7, wrap8, wrap9, wrap10, wrap11, wrap12, wrap13, wrap14, aa, ee, ii, oo, uu, nn, fragment1, fragment2, fragment3, fragment4, hoho, postInfo;
+        
+        
+        window.onload = function() {
+            fragment1 = document.createDocumentFragment();
+            fragment2 = document.createDocumentFragment();
+            fragment3 = document.createDocumentFragment();
+            fragment4 = document.createDocumentFragment();
+            // container = document.querySelector('.container');
+            myBody = document.querySelector('.my-body');
+            questionNumber = document.querySelector('.question-number');
+            total = document.querySelector('.total');
+            intro = document.querySelector('.intro');
+            question = document.querySelector('.question');
+            pista = document.querySelector('.pista');
+            myField = document.querySelector('.my-field');
+            submit = document.querySelector('.submit');
+            nextPrompt = document.querySelector('.next-prompt');
+            nextPrompt2 = document.querySelector('.next-prompt2');
+            nextQuestion = document.querySelector('.next-question');
+            meRindo = document.querySelector('.me-rindo');
+            scoreLine = document.querySelector('.score-line');
+            canGet = document.querySelector('.can-get');
+            myScore = document.querySelector('.my-score');
+            points = document.querySelector('.points');
+            yourScore = document.querySelector('.your-score');
+            wrap1 = document.querySelector('.wrap1');
+            wrap2 = document.querySelector('.wrap2');
+            wrap3 = document.querySelector('.wrap3');
+            wrap4 = document.querySelector('.wrap4');
+            wrap5 = document.querySelector('.wrap5');
+            wrap6 = document.querySelector('.wrap6');
+            wrap7 = document.querySelector('.wrap7');
+            wrap8 = document.querySelector('.wrap8');
+            wrap9 = document.querySelector('.wrap9');
+            wrap10 = document.querySelector('.wrap10');
+            wrap11 = document.querySelector('.wrap11');
+            wrap12 = document.querySelector('.wrap12');
+            wrap13 = document.querySelector('.wrap13');
+            wrap14 = document.querySelector('.wrap14');
+            img = document.querySelector('.img');
+            hoho = document.querySelector('.hoho');
+            postInfo = document.querySelector('.post-info');
+
+
+            
+            aa = document.getElementById('a');
+            ee = document.getElementById('e');
+            ii = document.getElementById('i');
+            oo = document.getElementById('o');
+            uu = document.getElementById('u');
+            nn = document.getElementById('n');
+
+            
+            let i = 0;
+            //Функция изначальных настроек каждого вопроса:
+            function initialState() {
+                wrap1.appendChild(wrap2);
+                wrap3.appendChild(wrap4);
+                wrap5.appendChild(wrap6);
+                
+                questionNumber.innerHTML = array.indexOf(array[i])+1;
+                total.innerHTML = array.length;
+                intro.innerHTML = array[i].intro;
+                question.innerHTML = array[i].pregunta;
+                // question.style.backgroundColor = "white";
+                // pista.textContent += pista1[i];
+                removeLetters();
+                getPista1();
+                postInfo.innerHTML = '';
+                canGet.innerHTML = 'Con estas letras puedes ganar ';
+                myScore.innerHTML = '3 ';
+                points.innerHTML = 'puntos';
+                nextQuestion.disabled = true;
+                meRindo.disabled = true;
+                nextPrompt.disabled = false;
+                myField.value = '';
+                myField.style.borderColor = 'black';
+                myField.style.color = 'black';
+                myField.focus();
+                submit.disabled = false;
+                myField.disabled = false;
+                wrap10.parentElement.removeChild(wrap10);
+                wrap8.parentElement.removeChild(wrap8);
+    
+            }
+            initialState();
+            
+            
+            wrap14.parentElement.removeChild(wrap14);
+            
+            nextQuestion.addEventListener('click', () => {
+                i +=1;
+                if (i < array.length-1) {
+                    initialState();
+                } else if (i === array.length-1) {
+                    nextQuestion.innerHTML = 'Resultado';
+                    initialState();
+                } else if (i === array.length) {
+                    myBody.innerHTML = "<br><br><br><h1>FIN DEL JUEGO</h1><h3>Resultado: " + score + "/" + array.length*3 + "</h3>";
+                }
+                return i;
+            });
+            
+        
+            // pista.appendChild(fragment1);
+            function getPista1() {
+                let pista1 = array[i].pista1;
+                let pista1split = pista1.toUpperCase().split('');
+                pista1split.forEach(letra => {
+                    let casilla = document.createElement('b');
+                    casilla.classList.add('casilla1');
+                    casilla.style.backgroundColor = '#1240ab';
+                    casilla.style.color = 'white';
+                    casilla.style.fontSize = '15pt';
+                    casilla.style.letterSpacing = '1px'
+                    casilla.style.borderColor = 'black';
+                    casilla.style.lineHeight = '35px';
+                    casilla.style.margin = '2px';
+                    casilla.style.textAlign = 'right';
+                    casilla.style.padding = '2px';
+                    casilla.style.fontFamily = 'Arial';
+                    casilla.textContent = letra;
+                    if (casilla.textContent === '_' || casilla.textContent === '*') {
+                        casilla.style.color = casilla.style.backgroundColor;
+                        casilla.style.letterSpacing = '4px';
+                    } else if (casilla.textContent === ' ') {
+                    casilla.style.backgroundColor = 'white';
+                    casilla.style.opacity = '.0';
+                    } else if (casilla.textContent === 'I') {
+                        casilla.style.letterSpacing = '5px';
+                        casilla.style.paddingLeft = '5px';
+                    }
+                    fragment1.appendChild(casilla);
+                });
+                pista.appendChild(fragment1);
+                myField.focus();
+            }
+            
+
+            function getPista2() {
+                let pista2 = array[i].pista2;
+                let pista2split = pista2.toUpperCase().split('');
+                pista2split.forEach(letra => {
+                    let casilla = document.createElement('b');
+                    casilla.classList.add('casilla2');
+                    casilla.style.backgroundColor = '#1240ab';
+                    casilla.style.color = 'white';
+                    casilla.style.fontSize = '15pt';
+                    casilla.style.letterSpacing = '1px'
+                    casilla.style.borderColor = 'black';
+                    casilla.style.lineHeight = '35px';
+                    casilla.style.margin = '2px';
+                    casilla.style.textAlign = 'right';
+                    casilla.style.padding = '2px';
+                    casilla.style.fontFamily = 'Arial';
+                    casilla.textContent = letra;
+                    if (casilla.textContent === '_' || casilla.textContent === '*') {
+                        casilla.style.color = casilla.style.backgroundColor;
+                        casilla.style.letterSpacing = '4px';
+                    } else if (casilla.textContent === ' ') {
+                    casilla.style.backgroundColor = 'white';
+                    casilla.style.opacity = '.0';
+                    } else if (casilla.textContent === 'I') {
+                        casilla.style.letterSpacing = '5px';
+                        casilla.style.paddingLeft = '5px';
+                    }
+                    fragment2.appendChild(casilla); 
+                });
+                pista.appendChild(fragment2);
+                myField.focus();
+            }
+            
+            function getPista3() {
+                let pista3 = array[i].pista3;
+                let pista3split = pista3.toUpperCase().split('');
+                pista3split.forEach(letra => {
+                    let casilla = document.createElement('b');
+                    casilla.classList.add('casilla3');
+                    casilla.style.backgroundColor = '#1240ab';
+                    casilla.style.color = 'white';
+                    casilla.style.fontSize = '15pt';
+                    casilla.style.letterSpacing = '1px'
+                    casilla.style.borderColor = 'black';
+                    casilla.style.lineHeight = '35px';
+                    casilla.style.margin = '2px';
+                    casilla.style.textAlign = 'right';
+                    casilla.style.padding = '2px';
+                    casilla.style.fontFamily = 'Arial';
+                    casilla.textContent = letra;
+                    if (casilla.textContent === '_' || casilla.textContent === '*') {
+                        casilla.style.color = casilla.style.backgroundColor;
+                        casilla.style.letterSpacing = '4px';
+                    } else if (casilla.textContent === ' ') {
+                    casilla.style.backgroundColor = 'white';
+                    casilla.style.opacity = '.0';
+                    } else if (casilla.textContent === 'I') {
+                        casilla.style.letterSpacing = '5px';
+                        casilla.style.paddingLeft = '5px';
+                    }
+                    fragment3.appendChild(casilla);
+                });
+                pista.appendChild(fragment3);
+                myField.focus();
+            }
+
+            
+            function getSolucion() {
+                let solucion = array[i].solucion;
+                let solucionSplit = solucion.toUpperCase().split('');
+                solucionSplit.forEach(letra => {
+                    casilla = document.createElement('b');
+                    casilla.classList.add('casilla4');
+                    // casilla.style.backgroundColor = '#228B22';
+                    casilla.style.backgroundColor = '#00BB3F';
+                    casilla.style.color = 'white';
+                    casilla.style.fontSize = '15pt';
+                    casilla.style.letterSpacing = '1px'
+                    casilla.style.borderColor = 'black';
+                    casilla.style.lineHeight = '35px';
+                    casilla.style.margin = '2px';
+                    casilla.style.textAlign = 'right';
+                    casilla.style.padding = '2px';
+                    casilla.style.fontFamily = 'Arial';
+                    casilla.textContent = letra;
+                    if (casilla.textContent === '_' || casilla.textContent === '*') {
+                        casilla.style.color = casilla.style.backgroundColor;
+                    } else if (casilla.textContent === ' ') {
+                    casilla.style.backgroundColor = 'white';
+                    casilla.style.opacity = '.0';
+                    } else if (casilla.textContent === 'I') {
+                        casilla.style.letterSpacing = '5px';
+                        casilla.style.paddingLeft = '5px';
+                    }
+                    fragment4.appendChild(casilla);
+                });
+                pista.appendChild(fragment4);
+            }
+
+
+            aa.onclick = function() {
+                myField.value += a.value;
+                myField.focus();
+            }
+            ee.onclick = function() {
+                myField.value += ee.value;
+                myField.focus();
+            }
+            ii.onclick = function() {
+                myField.value += ii.value;
+                myField.focus();
+            }
+            oo.onclick = function() {
+                myField.value += oo.value;
+                myField.focus();
+            }
+            uu.onclick = function() {
+                myField.value += uu.value;
+                myField.focus();
+            }
+            nn.onclick = function() {
+                myField.value += nn.value;
+                myField.focus();
+            }
+                
+            function removeLetters() {
+                let elements = pista.getElementsByTagName('b');
+                while (elements[0]) {
+                    elements[0].parentNode.removeChild(elements[0]);
+            }
+
+
+            nextPrompt.onclick = function setPrompt2() {
+                removeLetters();
+                getPista2();
+                myScore.innerHTML = '2 ';
+                points.innerHTML = 'puntos';
+                wrap6.parentElement.removeChild(wrap6);
+                wrap13.appendChild(wrap14);
+            }
+            
+            nextPrompt2.onclick = function setSolucion() {
+                removeLetters();
+                getPista3();
+                myScore.innerHTML = '1 ';
+                points.innerHTML = 'punto';
+                meRindo.disabled = false;
+                wrap14.parentElement.removeChild(wrap14);
+                wrap7.appendChild(wrap8);
+            }
+            
+            //Функция отоборажения экрана после того, как показан правильный ответ:
+            function postState() {
+                removeLetters();     
+                getSolucion();
+                nextQuestion.disabled = false;
+                canGet.innerHTML = ''; 
+                canGet.innerHTML = '';
+                myScore.innerHTML = '';
+                points.innerHTML = '';
+                intro.innerHTML = '';
+                // let removeMe = document.getElementsByTagName('span');
+                // removeMe.parentNode.remove
+                question.innerHTML = array[i].extraInfoImg;
+                postInfo.innerHTML = array[i].extraInfo + '<br><br>';
+                wrap9.appendChild(wrap10);
+                wrap2.parentElement.removeChild(wrap2);
+                wrap4.parentElement.removeChild(wrap4);
+                wrap8.parentElement.removeChild(wrap8);
+                
+            }
+
+            meRindo.onclick = function giveUp() {
+                postState();
+            }
+
+            function incorrectAnswer() {
+                myField.style.backgroundColor="red";
+                myField.style.color = "white";
+                myField.style.borderColor = 'red';
+                submit.disabled = true;
+                nextPrompt.disabled = true;
+                // meRindo.disabled = true; 
+                myField.focus();
+                function returnColor2() { 
+                    myField.style.backgroundColor = '#FFFFFF';
+                    myField.style.color = 'black';
+                    // myField.value = '';
+                    myField.style.borderColor = 'black';
+                    submit.disabled = false;
+                    nextPrompt.disabled = false;
+                }
+                setTimeout(returnColor2, 100);  
+            }
+
+            function correctAnswer() {
+                // removeLetters();
+                // getSolucion();
+                // pista.innerHTML = array[i].solucion.toUpperCase();
+                score += parseInt(myScore.innerHTML);
+                if (myScore.innerHTML == 3) {
+                    wrap6.parentElement.removeChild(wrap6);
+                } else if (myScore.innerHTML == 2) {
+                    wrap14.parentElement.removeChild(wrap14);
+                } else if (myScore.innerHTML == 1) {
+                    wrap8.parentElement.removeChild(wrap8);
+                }
+                return postState();
+            }
+            
+                    
+            submit.onclick = function submitAnswer() {
+                if (!array[i].solucion2) {
+                    if (myField.value.toUpperCase().replace(/\s+/g, ' ').trim() == array[i].solucion.toUpperCase()) {
+                        correctAnswer();
+                    } else if (!myField.value) {
+                        myField.value = 'Escribe algo aquí';
+                    } else {
+                        incorrectAnswer();
+                    }
+                } else if (array[i].solucion2) {
+                    if (myField.value.toUpperCase().replace(/\s+/g, ' ').trim() == array[i].solucion.toUpperCase() || myField.value.toUpperCase().replace(/\s+/g, ' ').trim() == array[i].solucion2.toUpperCase()) {
+                        correctAnswer();
+                    } else if (!myField.value) {
+                        myField.value = 'Escribe algo aquí';
+                    } else {
+                        incorrectAnswer();
+                    }
+                }
+            }
+            hoho.innerHTML = ',&nbsp&nbsp&nbsppuntos: ' + score + '/' + array.length*3;
+        }
+    }
+        </script>
+        <style type="text/css">
+
+
+        body{
+    /* Отступ слева документа: */
+            padding-left: 20%;
+    /* Отступ справа документа: */
+            padding-right: 20%;
+           
+            overflow: hidden;
+        }
+        .opacity{
+            background-image: url(img/ekaterinburg_3.jpg);
+            opacity: 0.5;
+            position: flex;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            opacity: 0.5;
+        }
+        .total-wrap{
+            opacity: 1;
+        }
+    /* Стиль фразы con estas letras puedes ganar */
+        .can-get{
+    /* Нежирный шрифт: */
+            font-weight: 200;
+        }
+        
+        img{
+    /* Плавность увеличения картинок: */
+            transition: 0.5s;
+    /* Рамочка картинок (типа выступающая): */
+            border: outset;
+    /* Высота изображения: */
+            height: 100px;
+        }  
+    /* Характеристики изображения при наведения мыши: */
+        img:hover{
+    /* Высота: */
+            height: 250px;
+        }
+    /* Характеристики кнопок в целом, если далее не оговорено иное: */
+        button{
+    /* Цвет кнопки: */
+            background-color: #1240ab;
+    /* Цвет шрифта: */
+            color: white;
+    /* Радиус скругления: */
+            border-radius: 20px;
+    /* Цвет рамки: */
+            border-color: #1240ab;
+    /* Отступы текста от краёв рамки (сначала сверху и снизу, потом по краям): */
+            padding: 5px 10px;
+        }
+    /* Характеристики кнопок при наведении мыши: */
+        button:hover{
+            background-color: #4671d5;
+            border-color:  #4671d5;
+            color:white;
+        }
+    /* Характеристики мыши во время клика: */
+        button:active{
+            background-color: white;
+            color: black;
+            border-color: white;
+        }
+    /* Характеристики кнопки OK: */
+        .submit{
+    /* Убираем пустое пространство между символами á, é, í... и полем ввода: */
+            margin-top: -5px;
+        }
+    /* Характеристики кнопки siguiente pregunta: */
+        .next-question{
+    /* Цвет кнопки: */
+            background-color: #00BB3F;
+    /* Цвет шрифта: */
+            color: white;
+    /* Цвет рамки: */
+            border-color: #00BB3F;
+        }
+    /* Характеристики кнопки siguiente pregunta при наведении мыши: */
+        .next-question:hover{
+            background-color: #37DD6F;
+            color: white;
+            border-color: #37DD6F;
+        }
+    /* Характеристики кнопки siguiente pregunta во время клика: */
+        .next-question:active{
+            background-color: white;
+            color: #37DD6F;
+            border-color: white;
+        }
+    /* Характеристики текста из позиции extraInfo: */
+        .post-info{
+            color: #1240ab;
+    /* Жирность (довольно жирная, максимум - 900): */
+            font-weight: 700;
+        }
+        
+        
+            </style>
+
+    </head>
+    <body class="my-body" style="text-align:center;font-family:Arial;">
+        <div class="opacity">
+            <div class="total-wrap">
+        <h3>Pregunta: <b class="question-number"></b><b>/</b><b class="total"></b><span class="hoho"></span></h3>
+        <div class="intro" style="font-size:11pt;text-align: center;"></div><br>
+   
+        <div class="question" style="font-size:13pt;"></div>
+        <div class="wrap11"><div class="wrap12"><p class="pista"></p></div> </div>
+        <div class="post-info"></div>
+
+        <div class="wrap1"><div class="wrap2">
+        <input id="a" type="button" value="á"><input id="e" type="button" value="é"><input id="i" type="button" value="í"><input id="o" type="button" value="ó"><input id="u" type="button" value="ú"><input id="n" type="button" value="ñ"><br>
+        <input class="my-field" type="text" size="30" style="border-width:2px;"> <button class="submit">OK</button><br><br>
+        </div></div>
+
+        <div class="wrap3"><div class="wrap4"><b class="can-get" style="font-size:10pt;"></b><b class="my-score"></b><b class="points"></b><br><br></div></div>
+        
+        <div class="wrap5"><span class="wrap6" id="remove-me"><button class="next-prompt" >Mostrar más letras</button></span></div>
+
+        <div class="wrap13"><span class="wrap14" id="remove-me"><button class="next-prompt2">Mostrar más letras</button></span></div>
+
+        <div class="wrap7"><span class="wrap8" margin="8px" id="remove-me"><button class="me-rindo">Solución</button></span></div>
+
+        <div class="wrap9"> <div class="wrap10"><button class="next-question">Siguiente pregunta >></button></div></div><br>
+        <div style="font-size:9pt">Para ver las reglas del juego <a href="https://www.youtube.com/watch?v=cvtvwM0czCU" target="_blank">haz click aquí.</a></div>
+        <canvas></canvas>
+        </div>
+      </div>
+    </body>
+</html>
